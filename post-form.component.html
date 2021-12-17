@@ -1,0 +1,17 @@
+<form (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="title"><b>Title:</b></label>
+    <input type="text" class="form-control" id="title" placeholder="Enter title">
+    <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+      <div *ngIf="title.errors?.['required']">Title is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comment"><b>Comment:</b></label>
+    <textarea type="text" class="form-control" id="comment" placeholder="Whatever you feel?"></textarea>
+    <div class="alert alert-danger" *ngIf="comment.touched && comment.invalid">
+      <div *ngIf="comment.errors?.['required']">Comment is required.</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Comment</button>
+</form>
